@@ -5,8 +5,8 @@
       "name": "myblob",
       "type": "blobTrigger",
       "direction": "in",
-      "path": "samples-workitems/{name}",
-      "connection": "myconnection"
+      "path": "fileup/{name}",
+      "connection": "AzureWebJobsStorage"
     }
   ]
 }
