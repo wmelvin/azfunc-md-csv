@@ -1,11 +1,9 @@
-# BlobTrigger - Python
+# BlobTrig
 
-The `BlobTrigger` makes it incredibly easy to react to new Blobs inside of Azure Blob Storage. This sample demonstrates a simple use case of processing data from a given Blob using Python.
+Configured to work with the [flask-fileup-az](https://github.com/wmelvin/flask-fileup-az) project, which can be used to upload files to Azure Storage blobs.
 
-## How it works
+Uses a copy of [csv_to_md.py](https://github.com/wmelvin/fewtilities/blob/main/csv_to_md.py) (as a package) to create a Markdown table from an uploaded CSV file.
 
-For a `BlobTrigger` to work, you provide a path which dictates where the blobs are located inside your container, and can also help restrict the types of blobs you wish to return. For instance, you can set the path to `samples/{name}.png` to restrict the trigger to only the samples path and only blobs with ".png" at the end of their name.
+Blob in path: `fileup/{name}.csv`
 
-## Learn more
-
-<TODO> Documentation
+Blob out path: `output-md/{name}.md`

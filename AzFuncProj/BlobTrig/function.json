@@ -5,7 +5,7 @@
       "name": "inblob",
       "type": "blobTrigger",
       "direction": "in",
-      "path": "fileup/{name}",
+      "path": "fileup/{name}.csv",
       "connection": "AzureWebJobsStorage"
     },
     {
