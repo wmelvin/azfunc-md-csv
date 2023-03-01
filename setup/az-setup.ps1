@@ -19,6 +19,7 @@
 $rgName = "fileupaz_rg"
 $location = "eastus"
 $storageAcct = "fileupaz01storage"
+$appServName = "fileupaz01appserv"
 
 
 #  Resources for the function app.
@@ -29,6 +30,7 @@ $funcAppName = "fileupaz01funcapp"
 Write-Host "$rgName"
 Write-Host "$location"
 Write-Host "$storageAcct"
+Write-Host "$appServName"
 Write-Host "$funcAppName"
 
 
@@ -51,13 +53,24 @@ az storage container create `
 # -- Create the function app.
 #    https://docs.microsoft.com/en-us/cli/azure/functionapp?view=azure-cli-latest#az-functionapp-create
 
+# # -- Use consumption plan.
+# az functionapp create `
+#     -g $rgName `
+#     --consumption-plan-location $location `
+#     --runtime python `
+#     --runtime-version 3.8 `
+#     --functions-version 4 `
+#     --name $funcAppName `
+#     --os-type linux `
+#     --storage-account $storageAcct
+
+# -- Use existing App Service Plan.
 az functionapp create `
     -g $rgName `
-    --consumption-plan-location $location `
+    --plan $appServName `
     --runtime python `
     --runtime-version 3.8 `
     --functions-version 4 `
     --name $funcAppName `
     --os-type linux `
     --storage-account $storageAcct
-
