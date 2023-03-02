@@ -34,4 +34,3 @@ def main(inblob: func.InputStream, outblob: func.Out[str]):
         logging.info(f"Write '{out_path}' to blob output.")
         md = out_path.read_text()
         outblob.set(md)
-
